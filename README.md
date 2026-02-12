@@ -111,7 +111,7 @@ MariaDB [foy]> SELECT DISTINCT v.state FROM vets v LEFT JOIN stateterritories s 
 +-------+
 16 rows in set (0.050 sec)
 
-# 4 - mynewpaltz database added, student and eployee table added
+# 4 - mynewpaltz database added, student and employee table added
 MariaDB [foy]> SOURCE C:\\Users\\foyje\\Downloads\\StudentExample.sql;
 MariaDB [mynewpaltz]> SOURCE C:\\Users\\foyje\\Downloads\\EmployeesDatabase.sql;
 ERROR 1049 (42000) at line 3 in file: 'C:\\Users\foyje\Downloads\EmployeesDatabase.sql': Unknown database 'employee'
