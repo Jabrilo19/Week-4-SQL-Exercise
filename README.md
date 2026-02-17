@@ -111,27 +111,35 @@ MariaDB [foy]> SELECT DISTINCT v.state FROM vets v LEFT JOIN stateterritories s 
 +-------+
 16 rows in set (0.050 sec)
 
-# 4 - mynewpaltz database added, student and employee table added
-MariaDB [foy]> SOURCE C:\\Users\\foyje\\Downloads\\StudentExample.sql;
-MariaDB [mynewpaltz]> SOURCE C:\\Users\\foyje\\Downloads\\EmployeesDatabase.sql;
-ERROR 1049 (42000) at line 3 in file: 'C:\\Users\foyje\Downloads\EmployeesDatabase.sql': Unknown database 'employee'
-Query OK, 0 rows affected (0.006 sec)
+# 4 
+MariaDB [(none)]>  SOURCE C:/Users/foyje/Downloads/StudentExample.sql;
+Query OK, 1 row affected (0.002 sec)
 
-Query OK, 0 rows affected (0.004 sec)
+Database changed
 
-Query OK, 7 rows affected (0.001 sec)
+MariaDB [mynewpaltz]> create database employee;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [mynewpaltz]>  SOURCE C:/Users/foyje/Downloads/EmployeesDatabase.sql;
+Database changed
+Query OK, 0 rows affected (0.011 sec)
+
+Query OK, 0 rows affected (0.007 sec)
+
+Query OK, 7 rows affected (0.002 sec)
 Records: 7  Duplicates: 0  Warnings: 0
 
-Query OK, 7 rows affected (0.001 sec)
+Query OK, 7 rows affected (0.003 sec)
 Records: 7  Duplicates: 0  Warnings: 0
 
 Query OK, 19 rows affected (0.001 sec)
 Records: 19  Duplicates: 0  Warnings: 0
 
-MariaDB [mynewpaltz]> show databases;
+MariaDB [employee]> show databases;
 +--------------------+
 | Database           |
 +--------------------+
+| employee           |
 | foy                |
 | information_schema |
 | mynewpaltz         |
@@ -140,18 +148,15 @@ MariaDB [mynewpaltz]> show databases;
 | sys                |
 | test               |
 +--------------------+
-7 rows in set (0.001 sec)
+8 rows in set (0.001 sec)
 
-MariaDB [mynewpaltz]> show tables;
-+----------------------+
-| Tables_in_mynewpaltz |
-+----------------------+
-| coursetable          |
-| departments          |
-| employees            |
-| enrollmenttable      |
-| studenttable         |
-+----------------------+
-5 rows in set (0.001 sec)
+MariaDB [employee]> show tables;
++--------------------+
+| Tables_in_employee |
++--------------------+
+| departments        |
+| employees          |
++--------------------+
+2 rows in set (0.001 sec)
 
-MariaDB [mynewpaltz]>
+MariaDB [employee]>
