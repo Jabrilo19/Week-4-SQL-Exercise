@@ -1,8 +1,6 @@
 # Week-4-SQL-Exercise
-MariaDB [(none)]> use foy
-Database changed
 
-# 1
+# 1 Replace your States table, with the data in the States_Territories.csv file (given). This file includes Territories like GUAM, Northern Marinara Islands etc.
 MariaDB [foy]> create table stateterritories (State varchar(30), Abbreviation varchar(10) primary key);
 Query OK, 0 rows affected (0.011 sec)
 
@@ -10,7 +8,7 @@ MariaDB [foy]> LOAD DATA LOCAL INFILE 'C:\\Users\\foyje\\Downloads\\States_Terri
 Query OK, 58 rows affected (0.005 sec)
 Records: 58  Deleted: 0  Skipped: 0  Warnings: 0
 
-# 2
+# 2 Use SQL to obtain a count of vets from each state, ordered in descending order, as shown here:
 MariaDB [foy]> SELECT state, COUNT(*) AS total FROM vets GROUP BY state ORDER BY COUNT(*) DESC;
 +-------+-------+
 | state | total |
@@ -87,7 +85,7 @@ MariaDB [foy]> SELECT state, COUNT(*) AS total FROM vets GROUP BY state ORDER BY
 +-------+-------+
 69 rows in set (0.035 sec)
 
-# 3
+# 3 Get (use SQL) a list of states in vets table that are not listed in the States table loaded in #1. This question involves two tables, vets and States.
 MariaDB [foy]> SELECT DISTINCT v.state FROM vets v LEFT JOIN stateterritories s on v.state = s.Abbreviation WHERE s.Abbreviation IS NULL;
 +-------+
 | state |
@@ -111,7 +109,7 @@ MariaDB [foy]> SELECT DISTINCT v.state FROM vets v LEFT JOIN stateterritories s 
 +-------+
 16 rows in set (0.050 sec)
 
-# 4 
+# 4 Source the StudentExample.sql and EmployeesDatabse.sql files. What are the new databases and new tables created?
 MariaDB [(none)]>  SOURCE C:/Users/foyje/Downloads/StudentExample.sql;
 Query OK, 1 row affected (0.002 sec)
 
